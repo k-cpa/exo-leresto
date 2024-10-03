@@ -59,7 +59,6 @@ span {
 header {
     background-image: url("../img/bg-slider-06.jpg");
     background-size: cover;
-    background-position: center;
     margin-right: .6%;
 }
 
@@ -110,7 +109,7 @@ nav a h2:hover {
     justify-content: center;
     text-align: center;
     color: white;
-    padding-top: 12rem;
+    padding-top: 11rem;
     padding-bottom: 30rem;
 }
 
