@@ -59,7 +59,9 @@ span {
 header {
     background-image: url("../img/bg-slider-06.jpg");
     background-size: cover;
+    background-position: center;
     margin-right: .6%;
+    height: 100vh;
 }
 
 header i {
@@ -109,8 +111,8 @@ nav a h2:hover {
     justify-content: center;
     text-align: center;
     color: white;
-    padding-top: 11rem;
-    padding-bottom: 30rem;
+    gap: 2rem;
+    margin-top: 5rem;
 }
 
 .header_title p {
@@ -125,6 +127,7 @@ nav a h2:hover {
 #store {
     display: flex;
     background-color: rgb(240, 237, 232);
+    width: 100vw;
 }
 
 #store h2 span {
@@ -151,6 +154,7 @@ nav a h2:hover {
     margin: 2rem;
     text-align: center;
     gap: 3rem;
+    box-sizing: border-box;
 }
 
 #store article:first-child img {
@@ -158,10 +162,10 @@ nav a h2:hover {
     width: 4vw;
 }
 
-#store article:last-child img {
-    display: block;
-    width: 50vw;
-    height: auto;
+#store article:last-child {
+    background-image: url(../img/store-01.jpg);
+    background-position: center;
+    background-size: cover;
 }
 
 #store article p {
@@ -201,6 +205,7 @@ nav a h2:hover {
 
 #menu article:first-child {
     text-align: center;
+    position: relative;
 }
 
 
@@ -229,7 +234,7 @@ nav a h2:hover {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 1fr);
     grid-template-areas: 
-         "mushroom garlic_potatoes"
+        "mushroom garlic_potatoes"
         "tuna pork"
         "chicken crab"
         "salmon_steak pizza_potatoes";
@@ -240,7 +245,7 @@ nav a h2:hover {
     padding: 3rem;
     z-index: 2;
     border-top: .5rem solid rgb(186, 26, 26);
-    position: relative;
+    margin-bottom: 6rem
 }
 
 /* POUR LA PETITE FLECHE BORDER CONTAINER - A VOIR PLUS TARD SI JE PARS BIEN OU PAS */
@@ -314,53 +319,176 @@ le bottom -20% est difficile à gérer en bas*/
     background-size: cover;
     background-position: center;
     z-index: 1;
-    top: 20%;
+    top: 10%;
     left: 0;
     right: 0;
-    bottom: -20%;
+    bottom: 0;
 }
 
 
 /************ BOOKING ************/
-/* 
+
 #booking {
+    background-color: rgb(38, 34, 34);
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: rgb(38, 34, 34);
-    text-align: center;
+    width: 100vw;
+    height: 80vh;
 }
 
+#booking h2 {
+    font-size: 3rem;
+}
+
+#booking span {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: -5px;
+    margin-bottom: .5rem;
+}
+
+#booking article {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+        "time_open booking_background booking_background"
+        "time_open booking_background booking_background"
+        "time_open booking_background booking_background";
+    text-align: center;
+    width: 65%;
+    height: 60vh;
+    margin-top: 3rem;
+    background-color: rgb(28, 19, 19);
+}
+
+.time_open {
+    grid-area: time_open;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2rem;
+    border: 1px dashed rgb(240, 237, 232, 0.3);
+}
+
+
+/* ELEMENTS INTERNES TIME OPEN (COLONNE GAUCHE) */
 #booking h2 {
     font-size: 3em;
 }
 
-#booking article {
-    width: 80%;
-    padding-top: 15rem;
-}
-
-
-
-.time_open {
-    display: flex;
-    align-items: center;
-    width: 33%;
-    display: flex;
-    flex-direction: column;
-    border: 1px dotted rgb(240, 237, 232);
-    padding: 1rem;
-    background-color: rgb(24, 22, 22);
-    margin: 1rem;
-    gap: 3rem;
-}
-
 .time_open img {
     width: 2vw;
-} */
+}
+
+.time_open p {
+    color: white;
+}
+
+.time_open h3 {
+    color: rgb(186, 26, 26);
+}
+
+/* GESTION DU STYLE FORMULAIRE BOOKING */
+
+.booking_background {
+    grid-area: booking_background;
+    background-color: rgb(240, 237, 232);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.booking_background span {
+    color: black;
+}
+
+.booking_background a {
+    display: inline-block;
+    color: white;
+    background-color: rgb(28, 19, 19);
+    padding: 15px 50px;
+    border-radius: 50px;
+    font-size: .8rem;
+}
+
+.booking_background a:hover {
+    transform: scale(1);
+    transition: 0.2s;
+    background-color: transparent;
+    border: 1px solid rgb(28, 19, 19);
+    color: rgb(28, 19, 19);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* GESTION DU STYLE FORMULAIRE BOOKING */
+
+.booking_grid_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 
+        "people date time"
+        "name phone email";
+    gap: 1rem;
+    margin: 1rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form_people {
+    grid-area: people;
+}
+
+.form_date {
+    grid-area: date;
+}
+
+.form_time {
+    grid-area: time;
+}
+
+.form_name {
+    grid-area: name;
+}
+
+.form_name {
+    grid-area: name;
+}
+
+.form_phone {
+    grid-area: phone;
+} 
+
+.form_email {
+    grid-area: email;
+}
+
+input, select {
+    border: none;
+    border-bottom: 1px solid black; 
+    background-color: transparent; 
+    font-family: inherit; 
+    width: 100%;
+}
+
+input::placeholder {
+    text-align: left;
+}
+
+
 
 
 /************ RESPONSIVE ************/
-
 

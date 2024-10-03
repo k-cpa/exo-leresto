@@ -54,10 +54,8 @@
                 <img src="assets/img/avatar-01.jpg" alt="visage d'un cuisinier d'origine asiatique">
                     <h3>Russell Stephens <SPan>CHEF COOK</SPan></h3>
             </article>
-            <article>
-                <img src="assets/img/store-01.jpg" alt="Image d'un plat en pleine élaboration dans une cuisine">
-            </article>
-        </section>
+            <article></article>
+            </section>
         <section id="menu">
             <article>
                 <h2>Discover</h2>
@@ -149,35 +147,66 @@
                     </div>
                     <h3>+15 890 979 25 52</h3>
                 </div>
-            </article>
-            <article>
                 <div class="booking_background">
                     <h2>Reservation <span>ONLINE BOOKING</span></h2>
                     <img src="assets/img/ic-plate.png" alt="Image de couverts entrecroisés">
                     <div class="booking_grid_container">
-                        <div class="people">
-                            <p>People</p>
+                        <div class="form form_people">
+                            <select name="people" id="people" aria-placeholder="People">
+                                <option value="1"></option>
+                                <option value="2"></option>
+                                <option value="3"></option>
+                                <option value="4"></option>
+                                <option value="5"></option>
+                                <option value="6"></option>
+                                <option value="7"></option>
+                                <option value="8"></option>
+                                <option value="9"></option>
+                                <option value="10"></option>
+                            </select>
                             <i class="fa-solid fa-chevron-down" style="color: #aeaeae;"></i>
                         </div>
-                        <div class="date">
-                            <p>Date</p>
+                        <div class="form form_date">
+                            <label for="date"></label>
+                            <input type="date" name="date" id="date" placeholder="Date">
                             <i class="fa-regular fa-calendar" style="color: #aeaeae;"></i>
                         </div>
-                        <div class="Time">
-                            <p>Time</p>
+                        <div class="form form_time">
+                            <select name="time" id="time" aria-placeholder="Time">
+                                <option value="7am">7 AM</option>
+                                <option value="8am">8 AM</option>
+                                <option value="9am">9 AM</option>
+                                <option value="10am">10 AM</option>
+                                <option value="11am">11 AM</option>
+                                <option value="12am">12 AM</option>
+                                <option value="1pm">1 PM</option>
+                                <option value="2pm">2 PM</option>
+                                <option value="3pm">3 PM</option>
+                                <option value="4pm">4 PM</option>
+                                <option value="5pm">5 PM</option>
+                                <option value="6pm">6 PM</option>
+                                <option value="7pm">7 PM</option>
+                                <option value="8pm">8 PM</option>
+                                <option value="9pm">9 PM</option>
+                                <option value="10pm">10 PM</option>
+                            </select>
                             <i class="fa-regular fa-clock" style="color: #aeaeae;"></i>
                         </div>
-                        <div class="Name">
-                            <p>Name</p>
+                        <div class="form form_name">
+                            <label for="name"></label>
+                            <input type="text" name="name" id="name" placeholder="Name">
                             <i class="fa-solid fa-chevron-down" style="color: #aeaeae;"></i>
                         </div>
-                        <div class="Phone">
-                            <p>Phone</p>
+                        <div class="form form_phone">
+                            <label for="phone"></label>
+                            <input type="number" name="phone" id="phone">
                         </div>
-                        <div class="Email">
-                            <p>People</p>
+                        <div class="form form_email">
+                            <label for="email"></label>
+                            <input type="email" name="email" id="email">
                         </div>
                     </div>
+                    <a class="btn_booking" href="">BOOK NOW</a>
                 </div>
             </article>
         </section>
