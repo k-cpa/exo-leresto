@@ -45,6 +45,13 @@ a:hover {
     transition: .5s ease;
 }
 
+.btn {
+    /* display: inline-block; */
+    padding: 15px 50px;
+    border-radius: 50px;
+    font-size: .8rem;
+}
+
 span {
     display: block;
     color: white;
@@ -86,6 +93,7 @@ nav h2 {
 nav ul {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     font-weight: bold;
@@ -245,7 +253,7 @@ nav a h2:hover {
     padding: 3rem;
     z-index: 2;
     border-top: .5rem solid rgb(186, 26, 26);
-    margin-bottom: 6rem
+    margin-bottom: 8rem;
 }
 
 /* POUR LA PETITE FLECHE BORDER CONTAINER - A VOIR PLUS TARD SI JE PARS BIEN OU PAS */
@@ -317,7 +325,7 @@ le bottom -20% est difficile à gérer en bas*/
     position: absolute;
     background-image: url(../img/bg-menu-01.jpg);
     background-size: cover;
-    background-position: center;
+    background-position: bottom center;
     z-index: 1;
     top: 10%;
     left: 0;
@@ -333,7 +341,7 @@ le bottom -20% est difficile à gérer en bas*/
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     width: 100vw;
     height: 80vh;
 }
@@ -358,9 +366,9 @@ le bottom -20% est difficile à gérer en bas*/
         "time_open booking_background booking_background"
         "time_open booking_background booking_background";
     text-align: center;
-    width: 65%;
+    width: 60%;
     height: 60vh;
-    margin-top: 3rem;
+    margin-top: 8em;
     background-color: rgb(28, 19, 19);
 }
 
@@ -408,22 +416,21 @@ le bottom -20% est difficile à gérer en bas*/
     color: black;
 }
 
-.booking_background a {
-    display: inline-block;
+.btn_booking {
     color: white;
     background-color: rgb(28, 19, 19);
-    padding: 15px 50px;
-    border-radius: 50px;
-    font-size: .8rem;
+    border: 1px solid rgb(28, 19, 19);
+}
+
+.booking_background a {
+    transition: 0.3s ease;
 }
 
 .booking_background a:hover {
-    transform: scale(1);
-    transition: 0.2s;
     background-color: transparent;
     border: 1px solid rgb(28, 19, 19);
     color: rgb(28, 19, 19);
-    font-weight: bold;
+    /* Penser à mettre curseur perso si le temps */
     cursor: pointer;
 }
 
@@ -487,8 +494,811 @@ input::placeholder {
     text-align: left;
 }
 
+/************ GALLERY ************/
+
+#gallery {
+    background-color: rgb(38, 34, 34);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100vw;
+    text-align: center;
+}
+
+#gallery h2 {
+    font-size: 4em;
+}
+
+#gallery h2 span {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-top: -10px;
+}
+
+.gallery_title img {
+    height: 4vh;
+    margin-top: 5vh;
+}
+
+#gallery article {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 
+        "wine burger sausages"
+        "eggs raspberries fish";
+    width: 90%;
+    margin-top: 5vh;
+    gap: 2rem;
+    padding: 0 2%;
+}
+
+.img-abs img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img-abs {
+    position: relative;
+}
+
+#gallery article > div {
+    aspect-ratio: 750/554;
+}
+ 
+.wine {
+    grid-area: wine;
+}
+
+.burger {
+    grid-area: burger;
+
+}
+
+.sausages {
+    grid-area: sausages;
+
+}
+
+.eggs {
+    grid-area: eggs;
+
+}
+
+.raspberries {
+    grid-area: raspberries;
+
+}
+
+.fish {
+    grid-area: fish;
+
+}
+
+.btn_gallery {
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+}
+
+#gallery a {
+    transition: 0.3s;
+}
+
+#gallery a:hover {
+    color: rgb(38, 34, 34);
+    border: 1px solid rgb(38, 34, 34);
+    background-color: white;
+    font-weight: bold;
+}
+
+/************ EVENT ************/
+
+#event {
+    background-color: rgb(38, 34, 34);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    text-align: center;
+    padding-bottom: 6rem;
+}
+
+#event h2 {
+    font-size: 4em;
+}
+
+#event h2 span {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-top: -10px;
+}
+
+.event_title {
+    margin-top: 3rem;
+}
+
+.event_title img {
+    height: 3vh;
+    margin-top: 5vh;
+}
 
 
 
-/************ RESPONSIVE ************/
+/* DISPOSITION GRID EVENT */
 
+#event article {
+    display: grid;
+    grid-template-columns: 1fr .4fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "inspirescu inspirescu johnnie "
+        "rubag rubag johnnie ";
+    gap: 2.5rem;
+    width: 50%;
+    height: 40vh;
+    margin-top: 3rem;
+}
+
+.inspirescu {
+    grid-area: inspirescu;
+    background-color: rgb(240, 237, 232);
+
+}
+
+.johnnie {
+    grid-area: johnnie;
+}
+
+.rubag {
+    grid-area: rubag;
+    background-color: rgb(240, 237, 232);
+}
+
+.inspirescu, .rubag {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+
+}
+
+.date {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+}
+
+/* GESTION DE BG-IMAGE */
+
+
+.date_inspirescu {
+    background-image: url(../img/event-01.jpg);
+}
+
+.date_rubag {
+    background-image: url(../img/event-02.jpg);
+}
+
+.johnnie {
+    background-image: url(../img/event-03.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/* ELEMENTS INTERNES DATE */
+
+
+.date h4, h4 span, .date_johnnie h4, .date_jhonnie span {
+    color: rgb(240, 237, 232);
+    background-color: rgb(38, 34, 34);
+    padding: .5rem 1rem .5rem 1rem;
+}
+.date h4, .date_johnnie h4 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.date span, .date_johnnie span {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: -5px;
+}
+
+/* ELEMENTS INTERNES DETAILS */
+
+.details {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.details h3 {
+    font-size: 2.5em;
+    font-weight: 200;
+}
+
+.details_elements {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.details_elements p {
+    margin: 1.5rem;
+    color: #acacac;
+}
+
+.details a {
+    color: black;
+    letter-spacing: 1px;
+    font-weight: 300;
+    font-size: 1.3rem;
+}
+
+.details a:hover {
+    transform: scale(1);
+    transition: 0S;
+    color: rgb(186, 26, 26);
+    font-weight: 400;
+    letter-spacing: 0px;
+    cursor: pointer;
+}
+
+/* GESTION SPECIFIQUE 2EME COLONNE */
+
+.johnnie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.color_container {
+    width: 85%;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(240, 237, 232);
+}
+
+.details_johnnie h3 {
+    font-size: 2rem;
+    padding: 1rem;
+    font-weight: 200;
+}
+
+.johnnie_details_elements {
+    display: flex;
+    gap: 1rem;
+    color: #acacac;
+    padding: 1rem;
+}
+.johnnie_details_elements p{
+    display: inline;
+}
+
+.color_container a {
+    margin-bottom: 5rem;
+    color: black;
+    letter-spacing: 1px;
+}
+
+.color_container a:hover {
+    transform: scale(1);
+    transition: 0S;
+    color: rgb(186, 26, 26);
+    font-weight: 400;
+    letter-spacing: 0px;
+    cursor: pointer;
+}
+
+/* TESTIMONY */
+
+#testimony {
+    background-color: rgb(38, 34, 34);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100vw;
+    height: 70vh;
+    text-align: center;
+    padding-bottom: 6rem;
+    position: relative;
+}
+
+#testimony article {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgb(240, 237, 232);
+    width: 50%;
+    height: 40%;
+    z-index: 2;
+}
+
+#testimony article img {
+    position: absolute;
+    top: -13%;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 100px;
+    width: 95px;
+}
+
+#testimony article h3 {
+    font-weight: 300;
+    font-size: 1.3rem;
+}
+
+#testimony article h3 span {
+    color: rgb(186, 26, 26);
+    font-weight: 100;
+    font-size: .8rem;
+}
+
+.testimony_text {
+    display: flex;
+    flex-direction: row;
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+    width: 60%;
+    font-weight: 200;
+}
+/* FAIRE LE BACKGROUND MAP 
+/* Background iframe */
+.map_container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    z-index: 1; 
+}
+
+iframe {
+    width: 100%;
+    left: 0;
+    height: 75%; 
+    position: absolute;
+    bottom: 0; 
+    z-index: 0;
+}
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+    width: 100%;
+}
+
+#footer_annonce {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 50%;
+    background-color: rgb(28, 19, 19);
+    height: 100%;
+}
+
+#footer_annonce h2, #footer_annonce p {
+    width: 40%;
+    padding-left: 50%;
+}
+
+#footer_annonce p {
+    padding-top: .2rem;
+    color: #4f4b4b;
+    font-size: 1.2rem;
+}
+
+
+#newsletter {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(38, 34, 34);
+    height: 100%;
+}
+
+#newsletter h3 {
+    font-size: 1.5rem;
+    color: rgb(240, 237, 232);
+}
+.footer_form {
+    width: 100%;
+}
+
+.footer_form input {
+    border: 1px solid #4f4b4b;
+    width: 100%;
+    height: 3rem;
+    margin-top: 1rem;
+}
+
+.footer_form ::placeholder {
+    margin: 1rem;
+    color: #4f4b4b;
+    padding-left: 2rem;
+    font-size: 1.3rem;
+    font-weight: 100;
+
+}
+
+.news_container {
+    width: 30%;
+}
+
+.follow {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+footer ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+footer ul a {
+    padding-left: 2rem;
+}
+
+
+
+
+/******************* RESPONSIVE *******************/
+
+
+/* 1600px */
+
+@media screen and (max-width:1600px) {
+    
+    header {
+        height: 80vh;
+    }
+    
+    nav {
+        padding-left: 1rem;
+    }
+
+    nav ul {
+        gap: 2rem;
+    }
+
+    #booking {
+        height: 70vh;
+    }
+
+    #booking article {
+        height: 50vh;
+    }
+
+    #event article {
+        width: 60%;
+    }
+}
+
+/* 1300px */
+
+@media screen and (max-width: 1300px) {
+    
+}
+nav {
+    padding-left: .5rem;
+}
+
+nav ul {
+    gap: 1rem;
+}
+
+#booking article {
+    width: 65%;
+    height: 50vh;
+}
+
+#footer_annonce h2, #footer_annonce p {
+    width: 50%;
+    padding-left: 40%;
+}
+
+.news_container {
+    width: 50%;
+}
+
+#newsletter h3 {
+    font-size: 1.2rem;
+}
+
+
+/* 1024px */
+
+@media screen and (max-width: 1024px) {
+    nav h2 {
+        font-size: 4em;
+    }
+
+    nav ul {
+        gap: .7rem;
+    }
+
+    header {
+        height: 60vh;
+    }
+
+    .menu_container {
+        width: 70%;
+        gap: 1rem;
+    }
+
+    #booking {
+        height: 60vh;
+    }
+
+    #booking article {
+        width: 70%;
+        height: 40vh;
+    }
+
+    .gallery_title img, .event_title img {
+        margin-top: 2vh;
+    }
+
+    #gallery article {
+        margin-top: 2vh;
+    }
+
+    #event article {
+        width: 80%;
+        height: 30%;
+        gap: 1rem;
+    }
+
+    .date h4, h4 span, .date_johnnie h4, .date_jhonnie span {
+        padding: .2rem .7rem .2rem .7rem;
+    }
+
+    .details h3 {
+        font-size: 2em;
+
+    }
+    
+    .details_elements p {
+        margin: .1rem;
+        color: #acacac;
+    }
+
+    .johnnie_details_elements {
+        display: flex;
+        gap: .5rem;
+        color: #acacac;
+        padding: .8rem;
+    }
+
+    #testimony {
+        height: 40vh;
+    }
+
+    #testimony article {
+        width: 65%;
+        height: 50%;
+    }
+
+    .testimony_text {
+        width: 70%;
+        padding-bottom: 1rem;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 30vh;
+        width: 100%;
+    }
+
+    #footer_annonce {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        width: 50%;
+        background-color: rgb(28, 19, 19);
+        height: 100%;
+    }
+
+    #footer_annonce h2, #footer_annonce p {
+        width: 60%;
+        padding-left: 30%;
+    }
+
+    #footer_annonce p {
+        padding-top: .1rem;
+        font-size: 1rem;
+    }
+
+
+    #newsletter h3 {
+        font-size: 1.2rem;
+    }
+
+    .footer_form {
+        width: 100%;
+    }
+
+    .footer_form input {
+        border: 1px solid #4f4b4b;
+        width: 100%;
+        height: 3rem;
+        margin-top: 1rem;
+    }
+
+    .footer_form ::placeholder {
+        margin: 1rem;
+        color: #4f4b4b;
+        padding-left: .5rem;
+        font-size: 1rem;
+        font-weight: 100;
+
+    }
+
+    .news_container {
+        width: 60%;
+    }
+
+}
+
+/* 991px */
+
+@media screen and (max-width:991px) {
+
+    header {
+        height: 50vh;
+    }
+    
+    #gallery article {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas: 
+            "wine burger"
+            "eggs raspberries" 
+            "sausages fish";
+        width: 90%;
+        margin-top: 5vh;
+        gap: 2rem;
+        padding: 0 2%;
+    }
+
+    .event_title {
+        margin-top: 0rem;
+    }
+
+    #testimony article {
+        height: 45%;
+    }
+
+    .testimony_text {
+        width: 80%;
+    }
+
+    footer {
+        height: 20vh;
+    }
+
+    #footer_annonce h2, #footer_annonce p {
+        width: 70%;
+        padding-left: 20%;
+    }
+
+    #footer_annonce h2 {
+        font-size: 4rem;
+    }
+
+    .news_container {
+        width: 70%;
+    }
+
+}
+
+/* 768px */
+
+@media screen and (max-width: 768px) {
+    
+    nav ul:last-child {
+        display: none;
+    }
+
+    .header_title h2 {
+        font-size: 4rem;
+    }
+
+    .testimony_text {
+        width: 95%;
+        font-size: .9rem;
+    }
+
+    .menu_container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(8, 1fr);
+        grid-template-areas: 
+            "mushroom" 
+            "garlic_potatoes"
+            "tuna" 
+            "pork"
+            "chicken" 
+            "crab"
+            "salmon_steak" 
+            "pizza_potatoes";
+    }
+
+    #booking {
+        height: 50vh;
+    }
+
+    #booking article {
+        height: 30vh;
+    }
+
+    #event {
+        height: 75vh;
+        justify-content: flex-start;
+        padding-bottom: 0rem;
+    }
+
+    #event article {
+        display: grid;
+        grid-template-columns:  1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas:
+            "johnnie"  
+            "rubag" 
+            "inspirescu";
+        gap: 1.5rem;
+        width: 50%;
+        height: 40vh;
+        margin-top: 3rem;
+    }
+
+    .news_container {
+        width: 90%;
+    }
+
+    #newsletter h3 {
+        font-size: 1rem;
+    }
+}
