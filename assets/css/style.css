@@ -1013,32 +1013,33 @@ footer ul a {
 /* 1300px */
 
 @media screen and (max-width: 1300px) {
+    nav {
+        padding-left: .5rem;
+    }
     
-}
-nav {
-    padding-left: .5rem;
-}
-
-nav ul {
-    gap: 1rem;
-}
-
-#booking article {
-    width: 65%;
-    height: 50vh;
-}
-
-#footer_annonce h2, #footer_annonce p {
-    width: 50%;
-    padding-left: 40%;
-}
-
-.news_container {
-    width: 50%;
-}
-
-#newsletter h3 {
-    font-size: 1.2rem;
+    nav ul {
+        gap: 1rem;
+    }
+    
+    #booking article {
+        width: 65%;
+        height: 50vh;
+    }
+    
+    #footer_annonce h2, #footer_annonce p {
+        width: 50%;
+        padding-left: 40%;
+    }
+    
+    .news_container {
+        width: 50%;
+    }
+    
+    #newsletter h3 {
+        font-size: 1.2rem;
+    }
+    
+    
 }
 
 
