@@ -71,10 +71,6 @@ header {
     height: 100vh;
 }
 
-header i {
-    padding: 1rem;
-}
-
 nav {
     display: flex;
     flex-direction: row;
@@ -106,12 +102,6 @@ nav a h2:hover {
     
 }
 
-.chevron {
-    display: flex;
-    justify-content: space-between;
-    align-self: center;
-}
-
 .header_title {
     display: flex;
     flex-direction: column;
@@ -121,6 +111,20 @@ nav a h2:hover {
     color: white;
     gap: 2rem;
     margin-top: 5rem;
+}
+
+.chevron_logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+header i {
+    padding: 1rem;
 }
 
 .header_title p {
@@ -357,6 +361,9 @@ le bottom -20% est difficile à gérer en bas*/
     margin-bottom: .5rem;
 }
 
+/* Problème responsive au bout d'un moment l'intérieur
+de time_open sort du cadre */
+
 #booking article {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -385,7 +392,7 @@ le bottom -20% est difficile à gérer en bas*/
 
 /* ELEMENTS INTERNES TIME OPEN (COLONNE GAUCHE) */
 #booking h2 {
-    font-size: 3em;
+    font-size: 3rem;
 }
 
 .time_open img {
@@ -394,6 +401,7 @@ le bottom -20% est difficile à gérer en bas*/
 
 .time_open p {
     color: white;
+    font-size: .8rem;
 }
 
 .time_open h3 {
@@ -430,7 +438,6 @@ le bottom -20% est difficile à gérer en bas*/
     background-color: transparent;
     border: 1px solid rgb(28, 19, 19);
     color: rgb(28, 19, 19);
-    /* Penser à mettre curseur perso si le temps */
     cursor: pointer;
 }
 
@@ -488,11 +495,19 @@ input, select {
     background-color: transparent; 
     font-family: inherit; 
     width: 100%;
+    appearance: none;
 }
 
 input::placeholder {
     text-align: left;
 }
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none !important;
+}
+
+
 
 /************ GALLERY ************/
 
@@ -534,7 +549,8 @@ input::placeholder {
     padding: 0 2%;
 }
 
-.img-abs img {
+/* positionnement image fonctionnel */
+.img_abs img {
     position: absolute;
     top: 0;
     left: 0;
@@ -543,7 +559,7 @@ input::placeholder {
     object-fit: cover;
 }
 
-.img-abs {
+.img_abs {
     position: relative;
 }
 
@@ -609,7 +625,7 @@ input::placeholder {
     align-items: center;
     width: 100vw;
     text-align: center;
-    padding-bottom: 6rem;
+    padding-bottom: 10rem;
 }
 
 #event h2 {
@@ -623,7 +639,7 @@ input::placeholder {
 }
 
 .event_title {
-    margin-top: 3rem;
+    margin-top: 1rem;
 }
 
 .event_title img {
@@ -635,16 +651,21 @@ input::placeholder {
 
 /* DISPOSITION GRID EVENT */
 
+#event {
+    height: 80vh;
+    width: 100vw;
+}
+
 #event article {
     display: grid;
-    grid-template-columns: 1fr .4fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1.2fr 1fr;
+    grid-template-rows: .5fr .5fr;
     grid-template-areas:
-        "inspirescu inspirescu johnnie "
-        "rubag rubag johnnie ";
-    gap: 2.5rem;
-    width: 50%;
-    height: 40vh;
+        "inspirescu johnnie"
+        "rubag johnnie";
+    gap: 2rem;
+    width: 60%;
+    height: 60%;
     margin-top: 3rem;
 }
 
@@ -730,7 +751,7 @@ input::placeholder {
 }
 
 .details h3 {
-    font-size: 2.5em;
+    font-size: 2em;
     font-weight: 200;
 }
 
@@ -750,7 +771,7 @@ input::placeholder {
     color: black;
     letter-spacing: 1px;
     font-weight: 300;
-    font-size: 1.3rem;
+    font-size: 1rem;
 }
 
 .details a:hover {
@@ -833,8 +854,8 @@ input::placeholder {
     justify-content: flex-start;
     align-items: center;
     background-color: rgb(240, 237, 232);
-    width: 50%;
-    height: 40%;
+    width: 60%;
+    height: 60%;
     z-index: 2;
 }
 
@@ -868,14 +889,6 @@ input::placeholder {
 }
 /* FAIRE LE BACKGROUND MAP 
 /* Background iframe */
-.map_container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; 
-    z-index: 1; 
-}
 
 iframe {
     width: 100%;
@@ -885,6 +898,7 @@ iframe {
     bottom: 0; 
     z-index: 0;
 }
+
 
 /* FOOTER */
 
@@ -912,10 +926,14 @@ footer {
     padding-left: 50%;
 }
 
+footer h2 {
+    font-size: 3.5rem;
+}
+
 #footer_annonce p {
     padding-top: .2rem;
     color: #4f4b4b;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 
@@ -930,7 +948,7 @@ footer {
 }
 
 #newsletter h3 {
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: rgb(240, 237, 232);
 }
 .footer_form {
@@ -945,16 +963,20 @@ footer {
 }
 
 .footer_form ::placeholder {
-    margin: 1rem;
-    color: #4f4b4b;
+    margin: .5rem;
+    color: #5e5959;
     padding-left: 2rem;
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: 100;
 
 }
 
 .news_container {
-    width: 30%;
+    width: 50%;
+}
+
+.news_container form {
+    width: 60%;
 }
 
 .follow {
@@ -1006,7 +1028,7 @@ footer ul a {
     }
 
     #event article {
-        width: 60%;
+        width: 80%;
     }
 }
 
@@ -1030,18 +1052,16 @@ footer ul a {
         width: 50%;
         padding-left: 40%;
     }
-    
+
     .news_container {
-        width: 50%;
+        width: 60%;
     }
     
     #newsletter h3 {
         font-size: 1.2rem;
     }
     
-    
 }
-
 
 /* 1024px */
 
@@ -1062,14 +1082,28 @@ footer ul a {
         width: 70%;
         gap: 1rem;
     }
+    
+    /* BOOKING */
 
     #booking {
         height: 60vh;
     }
 
     #booking article {
-        width: 70%;
+        width: 75%;
         height: 40vh;
+    }
+
+    .time_open {
+        justify-content: center;
+    }
+
+    .time_open h3 {
+        font-size: 1rem;
+    }
+
+    .time_open p {
+        font-size: .8rem;
     }
 
     .gallery_title img, .event_title img {
@@ -1080,11 +1114,11 @@ footer ul a {
         margin-top: 2vh;
     }
 
-    #event article {
+    /* #event article {
         width: 80%;
         height: 30%;
         gap: 1rem;
-    }
+    } */
 
     .date h4, h4 span, .date_johnnie h4, .date_jhonnie span {
         padding: .2rem .7rem .2rem .7rem;
@@ -1107,14 +1141,9 @@ footer ul a {
         padding: .8rem;
     }
 
-    #testimony {
-        height: 40vh;
-    }
-
-    #testimony article {
-        width: 65%;
-        height: 50%;
-    }
+    /* #testimony {
+        height: 60vh;
+    } */
 
     .testimony_text {
         width: 70%;
@@ -1144,8 +1173,8 @@ footer ul a {
     }
 
     #footer_annonce h2, #footer_annonce p {
-        width: 60%;
-        padding-left: 30%;
+        width: 100%;
+        padding-left: 20%;
     }
 
     #footer_annonce p {
@@ -1153,9 +1182,8 @@ footer ul a {
         font-size: 1rem;
     }
 
-
     #newsletter h3 {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .footer_form {
@@ -1191,7 +1219,35 @@ footer ul a {
     header {
         height: 50vh;
     }
+
+    .header_title p {
+        display: none;
+    }
     
+    /* BOOKING */
+
+    #booking article {
+        width: 90%;
+    }
+
+    #booking article {
+        grid-template-columns: 1.5fr 1fr 1fr;
+    }
+
+    .booking_grid_container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas:
+            "people date"
+            "time name"
+            "phone email" ;
+        margin: 0rem;
+    }
+
+ 
+
+    /* GALLERY */
+
     #gallery article {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(3, 1fr);
@@ -1205,9 +1261,17 @@ footer ul a {
         padding: 0 2%;
     }
 
+    /* EVENT */
+
     .event_title {
         margin-top: 0rem;
     }
+
+    #event {
+        padding-bottom: 7rem;
+    }
+
+    /* TESTIMONY */
 
     #testimony article {
         height: 45%;
@@ -1216,6 +1280,8 @@ footer ul a {
     .testimony_text {
         width: 80%;
     }
+
+    /* FOOTER */
 
     footer {
         height: 20vh;
@@ -1227,7 +1293,11 @@ footer ul a {
     }
 
     #footer_annonce h2 {
-        font-size: 4rem;
+        font-size: 3rem;
+    }
+
+    #footer_annonce p {
+        font-size: .8rem;
     }
 
     .news_container {
@@ -1248,11 +1318,6 @@ footer ul a {
         font-size: 4rem;
     }
 
-    .testimony_text {
-        width: 95%;
-        font-size: .9rem;
-    }
-
     .menu_container {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(8, 1fr);
@@ -1267,39 +1332,55 @@ footer ul a {
             "pizza_potatoes";
     }
 
-    #booking {
-        height: 50vh;
-    }
-
-    #booking article {
-        height: 30vh;
-    }
-
     #event {
         height: 75vh;
         justify-content: flex-start;
-        padding-bottom: 0rem;
+        padding-bottom: 30rem;
     }
 
     #event article {
         display: grid;
-        grid-template-columns:  1fr;
-        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(3, 1fr);
         grid-template-areas:
             "johnnie"  
             "rubag" 
             "inspirescu";
-        gap: 1.5rem;
+        gap: 1rem;
         width: 50%;
         height: 40vh;
         margin-top: 3rem;
     }
 
-    .news_container {
+    #testimony {
+        height: 50vh;
+    }
+
+    #testimony article {
+        width: 80%;
+        height: 25vh;
+    }
+
+    .testimony_text {
+        width: 95%;
+        font-size: .9rem;
+    }
+
+    #footer_annonce {
+    }
+
+    #footer_annonce h2, #footer_annonce p {
         width: 90%;
+        padding-left: 1rem;
+    }
+
+    .news_container {
+        width: 100%;
+        margin-left: 1rem;
     }
 
     #newsletter h3 {
-        font-size: 1rem;
+        font-size: .8rem;
     }
+
 }
