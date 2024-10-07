@@ -71,6 +71,22 @@ header {
     height: 100vh;
 }
 
+/* div qui comprend UL et burger icon */
+.burger_focus {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Gestion du visuel burger menu */
+.burger_focus i {
+    display: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    height: 10%;
+}
+
+
 nav {
     display: flex;
     flex-direction: row;
@@ -809,6 +825,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .johnnie_details_elements {
     display: flex;
+    justify-content: center;
     gap: 1rem;
     color: #acacac;
     padding: 1rem;
@@ -1007,9 +1024,9 @@ footer ul a {
 
 @media screen and (max-width:1600px) {
     
-    header {
+    /* header {
         height: 80vh;
-    }
+    } */
     
     nav {
         padding-left: 1rem;
@@ -1216,12 +1233,10 @@ footer ul a {
 
 @media screen and (max-width:991px) {
 
-    header {
-        height: 50vh;
-    }
-
-    .header_title p {
-        display: none;
+    .link_socials ul {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem;
     }
     
     /* BOOKING */
@@ -1243,8 +1258,6 @@ footer ul a {
             "phone email" ;
         margin: 0rem;
     }
-
- 
 
     /* GALLERY */
 
@@ -1310,9 +1323,52 @@ footer ul a {
 
 @media screen and (max-width: 768px) {
     
-    nav ul:last-child {
+    /* GESTION AFFICHAGE BURGER MENU MOBILE */
+
+    nav {
+        position: relative;
+    }
+
+    .burger_focus {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 2rem;
+    }
+    .burger_focus i {
+        display: revert;
+    }
+    
+    .burger_focus ul {
         display: none;
     }
+
+    .link_socials {
+        display: none;
+    }
+
+    .burger_focus:hover ul {
+        display: revert;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        background-color: rgb(152, 137, 137, 0.4);
+        padding: 1rem;
+        margin: .3rem;
+        border-radius: 20px;
+    }
+
+    .burger_focus:hover i {
+        opacity: 0.4;
+    }
+
+    .burger_focus ul a {
+        margin-top: 1rem;
+    }
+
+    /*********************************/
+
 
     .header_title h2 {
         font-size: 4rem;
@@ -1335,7 +1391,7 @@ footer ul a {
     #event {
         height: 75vh;
         justify-content: flex-start;
-        padding-bottom: 30rem;
+        padding-bottom: 10rem;
     }
 
     #event article {
@@ -1346,10 +1402,24 @@ footer ul a {
             "johnnie"  
             "rubag" 
             "inspirescu";
-        gap: 1rem;
-        width: 50%;
-        height: 40vh;
+        width: 80%;
+        height: 50vh;
         margin-top: 3rem;
+        gap: 1rem;
+    }
+
+    #event h3 {
+        font-size: 1.5rem;
+    }
+
+    .date h4, h4 span {
+        padding: .1rem .4rem .1rem .4rem;
+        font-size: 1rem;
+    }
+
+
+    .details_johnnie h3 {
+        padding: .5rem;
     }
 
     #testimony {
@@ -1357,8 +1427,8 @@ footer ul a {
     }
 
     #testimony article {
-        width: 80%;
-        height: 25vh;
+        width: 90%;
+        height: 30vh;
     }
 
     .testimony_text {
@@ -1383,4 +1453,10 @@ footer ul a {
         font-size: .8rem;
     }
 
+}
+
+@media screen and (max-width: 450px) {
+    #event {
+        padding-bottom: 15rem;
+    }
 }
